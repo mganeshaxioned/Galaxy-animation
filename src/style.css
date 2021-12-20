@@ -1,0 +1,220 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html,
+body
+{
+    overflow: hidden;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    position: relative;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+    cursor: none !important;
+}
+
+.display-none { display: none;}
+.cursor-none { cursor: none;}
+
+.cursor {
+	width: 32px;
+	position: absolute;
+	z-index: 5000;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+.cursor img {
+    width: 60px;
+    height: auto;
+}
+
+.avatars-window {
+	height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    background-color: #000;
+}
+
+.avatars-window .wrapper {
+    width: 400px;
+    height: 400px;
+    border: 1px solid white;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.avatars-window h3 {
+	margin: 30px 50px;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.avatars-menu {
+	margin: 0 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+}
+
+.avatars-menu li {
+	padding: 10px 0;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	text-align: center;
+}
+
+.avatars-menu li img { 
+	height: 100px;
+	width: 40px;
+}
+
+.dg.main .close-button.close-bottom {
+    display: none;
+}
+
+.dots{
+    font-family: 'Space Mono', monospace;
+    z-index: 3;
+    position: absolute;
+    /* position: relative; */
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.dots:hover{
+  /* width: 300px;
+  height: 300px;
+  border-radius:50%;
+  background-color: pink;
+  transition: box-shadow 0.3s ease-in-out;
+  transition: background-color 0.2 ease-in-out;
+  transition-delay: 300ms;
+  box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px #dca8f3, 0 0 140px 90px #b65ca7; */
+
+}
+
+.dots a {
+    color: white;
+    text-decoration: none;
+}
+.dots span {
+    display: block;
+}
+
+/* 
+.dots-1 {
+    top: 22%;
+    left: 44%; 
+}
+
+.dots-2 {
+    top: 37%;
+    left: 70%;
+}
+
+.dots-3 {
+    top: 62%;
+    left: 68%;
+}
+
+.dots-4 {
+    bottom: 20%;
+    left: 44%;
+}
+
+.dots-5 {
+    top: 62%;
+    left: 23%;
+}
+
+
+.dots-6 {
+    top: 37%;
+    left: 20%;
+} */
+
+/* new css  */
+
+
+.dots-1 {
+    top: 12%;
+    left: 44%;
+}
+.dots-2 {
+    top: 36%;
+    left: 68%;
+}
+.dots-3 {
+    top: 62%;
+    left: 65%;
+}
+.dots-4 {
+    bottom: 22%;
+    left: 44%;
+}
+.dots-5 {
+    top: 62%;
+    left: 23%;
+}
+.dots-6 {
+    top: 37%;
+    left: 15%;
+}
