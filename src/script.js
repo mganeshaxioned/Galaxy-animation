@@ -9,6 +9,7 @@ var renderer = new THREE.WebGLRenderer({
   alpha: true,
   antialias: true,
 });
+
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x000000);
 galaxie.appendChild(renderer.domElement);
@@ -98,16 +99,16 @@ function createBranch(
 createBranch(
   2000,
   0.5,
-  0.01,
+  5,
   ['rgba(245, 195, 251, 0.2)', 'rgba(0,0,0,0)'],
   false,
-  false
+  true
 );
 
 createBranch(
   2000,
   0.1,
-  0.01,
+  5,
   ['rgba(174, 190, 249, 0.3)', 'rgba(0,0,0,0)'],
   false,
   true
@@ -119,20 +120,20 @@ createBranch(
 
 createBranch(
   20000,
-  2,
-  0.4,
-  ['rgba(161, 92, 215, 1)', 'rgba(0,0,0,0)'],
-  true,
+  5,
+  0.3,
+  ['rgba(161, 92, 215, 1)', 'rgba(161, 92, 215, 0)'],
+  false,
   false
 );
 
 createBranch(
   20000,
-  2,
-  0.4,
-  ['rgba(112, 63, 162, 1)', 'rgba(0,0,0,0)'],
-  true,
-  true
+  5,
+  0.3,
+  ['rgba(112, 63, 162, 1)', 'rgba(147, 24, 240, 0)'],
+  false,
+  false
 );
 
 /* -------------------------------------------------------------------------- */
@@ -140,20 +141,20 @@ createBranch(
 /* -------------------------------------------------------------------------- */
 
 createBranch(
-  15000,
-  0.8,
+  20000,
+  8,
   0.15,
-  ['rgba(224, 213, 203,1)', 'rgba(0,0,0,0)'],
-  true,
+  ['rgba(179, 0, 259,1)', 'rgba(0,0,0,0)'],
+  false,
   false
 );
 
 createBranch(
-  15000,
-  0.8,
-  0.15,
-  ['rgba(224, 213, 203,1)', 'rgba(0,0,0,0)'],
-  true,
+  20000,
+  8,
+  0.45,
+  ['rgba(195, 103, 235,1)', 'rgba(0,0,0,0)'],
+  false,
   true
 );
 
@@ -278,9 +279,9 @@ var starsGeometry = new THREE.Geometry();
 
 for (var i = 0; i < 20000; i++) {
   var star = new THREE.Vector3();
-  star.x = THREE.Math.randFloatSpread(8000);
-  star.y = THREE.Math.randFloatSpread(8000);
-  star.z = THREE.Math.randFloatSpread(8000);
+  star.x = THREE.Math.randFloatSpread(10000);
+  star.y = THREE.Math.randFloatSpread(10000);
+  star.z = THREE.Math.randFloatSpread(10000);
 
   starsGeometry.vertices.push(star);
 }
@@ -291,7 +292,6 @@ var starsMaterial = new THREE.PointsMaterial({
   blending: THREE.AdditiveBlending,
   transparent: true,
 });
-
 
 var starField = new THREE.Points(starsGeometry, starsMaterial);
 
@@ -389,13 +389,17 @@ function defaultAvatar(e) {
 }
 
 function selectAvatar(e) {
-  if (e.target.tagName === 'LI') {
+  if (e.target.tagName === 'LI' && window.innerWidth > 786) {
     return false;
   }
-  selectedAvatarSrc = e.target.src;
-  sessionStorage.setItem('selectedAvatar', selectedAvatarSrc);
-  mouseCursorImg.src = selectedAvatarSrc;
-  mouseCursor.classList.remove('display-none');
+  if (window.innerWidth > 786) {
+    selectedAvatarSrc = e.target.src;
+    sessionStorage.setItem('selectedAvatar', selectedAvatarSrc);
+
+    mouseCursorImg.src = selectedAvatarSrc;
+    mouseCursor.classList.remove('display-none');
+  }
+  
   avatarsWindow.classList.add('display-none');
   document.querySelector('html').classList.add('cursor-none');
 }
